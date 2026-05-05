@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Vectorium Engineering — Manufacturing-ready mechanical engineering. Aerospace PMI/MBD, GD&T, DFM, SolidWorks CAD. Precision from concept to production floor."/>
+  <meta name="description" content="Vectorium Engineering — Manufacturing-ready mechanical design services. CAD Modeling, PMI/MBD, GD&T, DFM, FEA. Pune, India. Serving clients globally."/>
+  <meta name="keywords" content="mechanical engineering, CAD modeling, GD&T, PMI, MBD, DFM, FEA, SolidWorks, SolidEdge, aerospace, manufacturing, Pune"/>
   <title>Vectorium Engineering | Engineering in Motion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -15,86 +16,126 @@
 <!-- PRELOADER -->
 <div class="preloader" id="preloader">
   <div class="pre-inner">
-    <img src="vectorium-logo.png" alt="Vectorium" class="pre-logo-img"/>
+    <img src="vectorium-logo.png" alt="Vectorium" class="pre-logo"/>
     <div class="pre-bar"><div class="pre-fill" id="preFill"></div></div>
-    <div class="pre-pct" id="prePct">0%</div>
+    <span class="pre-txt" id="preTxt">Loading...</span>
   </div>
 </div>
 
-<!-- CURSOR -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-follower" id="cursorFollower"></div>
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="tb-inner">
+    <div class="tb-left">
+      <a href="mailto:contact@vectoriumengineering.com">✉ contact@vectoriumengineering.com</a>
+      <a href="tel:+910000000000">📞 +91 00000 00000</a>
+    </div>
+    <div class="tb-right">
+      <span>Follow Us:</span>
+      <a href="#" aria-label="LinkedIn" class="tb-social">in</a>
+      <a href="#" aria-label="Instagram" class="tb-social">ig</a>
+      <a href="#" aria-label="YouTube" class="tb-social">yt</a>
+    </div>
+  </div>
+</div>
 
 <!-- HEADER -->
 <header id="header">
   <div class="header-inner">
-    <a href="#hero" class="logo-wrap">
+    <a href="#hero" class="logo-link">
       <img src="vectorium-logo.png" alt="Vectorium Engineering" class="logo-img"/>
     </a>
     <nav id="nav">
       <ul>
+        <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#capabilities">Capabilities</a></li>
+        <li class="has-dropdown">
+          <a href="#services">Services ▾</a>
+          <ul class="dropdown">
+            <li><a href="#services">CAD Modeling</a></li>
+            <li><a href="#services">PMI / MBD Documentation</a></li>
+            <li><a href="#services">GD&amp;T &amp; Tolerancing</a></li>
+            <li><a href="#services">DFM / DFA Analysis</a></li>
+            <li><a href="#services">Structural Design</a></li>
+            <li><a href="#services">FEA Simulation</a></li>
+            <li><a href="#services">Technical Drawings</a></li>
+            <li><a href="#services">Reverse Engineering</a></li>
+          </ul>
+        </li>
         <li><a href="#industries">Industries</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
       </ul>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
     </button>
+  </div>
+  <!-- Mobile Nav -->
+  <div class="mob-nav" id="mobNav">
+    <a href="#hero" onclick="closeMob()">Home</a>
+    <a href="#about" onclick="closeMob()">About</a>
+    <a href="#services" onclick="closeMob()">Services</a>
+    <a href="#industries" onclick="closeMob()">Industries</a>
+    <a href="#projects" onclick="closeMob()">Projects</a>
+    <a href="#why-us" onclick="closeMob()">Why Us</a>
+    <a href="#contact" onclick="closeMob()">Contact Us</a>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <canvas class="hero-canvas" id="heroCanvas"></canvas>
-  <div class="hero-bg-grid"></div>
+  <canvas id="heroCanvas" class="hero-canvas"></canvas>
+  <div class="hero-grid-overlay"></div>
   <div class="hero-glow g1"></div>
   <div class="hero-glow g2"></div>
   <div class="hero-inner container">
     <div class="hero-content">
-      <div class="hero-badge reveal-up">
-        <span class="badge-pulse"></span>
-        <span>Available for New Projects</span>
+      <div class="hero-badge reveal">
+        <span class="bpulse"></span>
+        Available for New Projects — Pune, India &amp; Remote Global
       </div>
-      <div class="hero-logo-wrap reveal-up d1">
-        <img src="vectorium-logo.png" alt="Vectorium Engineering" class="hero-logo-img"/>
+      <div class="hero-logo-box reveal d1">
+        <img src="vectorium-logo.png" alt="Vectorium Engineering" class="hero-logo"/>
       </div>
-      <h1 class="hero-title reveal-up d2">
-        <span class="ht-main">VECTORIUM</span>
-        <span class="ht-sub">ENGINEERING</span>
+      <h1 class="hero-h1 reveal d2">
+        <span class="h1-main">VECTORIUM</span>
+        <span class="h1-sub">ENGINEERING</span>
       </h1>
-      <p class="hero-slogan reveal-up d3">"Engineering in Motion"</p>
-      <p class="hero-desc reveal-up d4">
-        Precision CAD · PMI/MBD Documentation · Structural Systems<br/>
+      <p class="hero-slogan reveal d3">"Engineering in Motion"</p>
+      <p class="hero-tagline reveal d4">
+        Precision Mechanical Design · PMI/MBD Documentation · Structural Systems<br/>
         Manufacturing-Ready Deliverables for Industrial Clients Worldwide
       </p>
-      <div class="hero-ctas reveal-up d5">
-        <a href="#capabilities" class="btn btn-primary">View Capabilities</a>
-        <a href="#contact" class="btn btn-ghost">Start a Project →</a>
+      <div class="hero-btns reveal d5">
+        <a href="#services" class="btn btn-primary">Explore Services</a>
+        <a href="#contact" class="btn btn-outline">Get a Free Quote →</a>
       </div>
-      <div class="hero-stats reveal-up d6">
-        <div class="hs-item">
-          <span class="hs-num">100<span class="hs-plus">+</span></span>
-          <span class="hs-lbl">Aerospace Parts Documented</span>
+      <div class="hero-stats reveal d6">
+        <div class="hstat">
+          <span class="hstat-n">100<sup>+</sup></span>
+          <span class="hstat-l">Parts Documented</span>
         </div>
-        <div class="hs-sep"></div>
-        <div class="hs-item">
-          <span class="hs-num">AIR <span class="hs-plus">13</span></span>
-          <span class="hs-lbl">SAE India National Rank</span>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <span class="hstat-n">8<sup>+</sup></span>
+          <span class="hstat-l">Core Services</span>
         </div>
-        <div class="hs-sep"></div>
-        <div class="hs-item">
-          <span class="hs-num">ASME</span>
-          <span class="hs-lbl">Y14.5 · ISO 2768 · ISO 1101</span>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <span class="hstat-n">ASME</span>
+          <span class="hstat-l">Y14.5 · ISO 2768</span>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <span class="hstat-n">24<sup>hr</sup></span>
+          <span class="hstat-l">Response Time</span>
         </div>
       </div>
     </div>
   </div>
-  <div class="scroll-cue">
-    <div class="sc-line"></div>
+  <div class="hero-scroll">
+    <div class="hs-line"></div>
     <span>SCROLL</span>
   </div>
 </section>
@@ -102,30 +143,18 @@
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span>SolidWorks</span><em>◆</em>
-    <span>SolidEdge</span><em>◆</em>
-    <span>PMI / MBD</span><em>◆</em>
-    <span>GD&amp;T · ASME Y14.5</span><em>◆</em>
-    <span>DFM / DFA</span><em>◆</em>
-    <span>Aerospace Structures</span><em>◆</em>
-    <span>UAV Design</span><em>◆</em>
-    <span>Sheet Metal</span><em>◆</em>
-    <span>Weldments</span><em>◆</em>
-    <span>FEA Simulation</span><em>◆</em>
-    <span>Tolerance Stackup</span><em>◆</em>
-    <span>BOM Documentation</span><em>◆</em>
-    <span>SolidWorks</span><em>◆</em>
-    <span>SolidEdge</span><em>◆</em>
-    <span>PMI / MBD</span><em>◆</em>
-    <span>GD&amp;T · ASME Y14.5</span><em>◆</em>
-    <span>DFM / DFA</span><em>◆</em>
-    <span>Aerospace Structures</span><em>◆</em>
-    <span>UAV Design</span><em>◆</em>
-    <span>Sheet Metal</span><em>◆</em>
-    <span>Weldments</span><em>◆</em>
-    <span>FEA Simulation</span><em>◆</em>
-    <span>Tolerance Stackup</span><em>◆</em>
-    <span>BOM Documentation</span><em>◆</em>
+    <span>SolidWorks</span><i>◆</i><span>SolidEdge</span><i>◆</i>
+    <span>PMI / MBD</span><i>◆</i><span>GD&amp;T · ASME Y14.5</span><i>◆</i>
+    <span>DFM / DFA</span><i>◆</i><span>Aerospace Structures</span><i>◆</i>
+    <span>Sheet Metal Design</span><i>◆</i><span>Weldment Design</span><i>◆</i>
+    <span>FEA Simulation</span><i>◆</i><span>Tolerance Stackup</span><i>◆</i>
+    <span>Reverse Engineering</span><i>◆</i><span>BOM &amp; Documentation</span><i>◆</i>
+    <span>SolidWorks</span><i>◆</i><span>SolidEdge</span><i>◆</i>
+    <span>PMI / MBD</span><i>◆</i><span>GD&amp;T · ASME Y14.5</span><i>◆</i>
+    <span>DFM / DFA</span><i>◆</i><span>Aerospace Structures</span><i>◆</i>
+    <span>Sheet Metal Design</span><i>◆</i><span>Weldment Design</span><i>◆</i>
+    <span>FEA Simulation</span><i>◆</i><span>Tolerance Stackup</span><i>◆</i>
+    <span>Reverse Engineering</span><i>◆</i><span>BOM &amp; Documentation</span><i>◆</i>
   </div>
 </div>
 
@@ -133,222 +162,212 @@
 <section class="section about" id="about">
   <div class="container">
     <div class="about-grid">
-      <div class="about-left">
-        <div class="sec-tag reveal-up">About the Firm</div>
-        <h2 class="sec-title reveal-up d1">Bridging Design<br/>& the Factory Floor</h2>
-        <p class="sec-body reveal-up d2">Vectorium Engineering is a precision mechanical engineering firm delivering manufacturing-ready designs, structural systems, and complete technical documentation for industrial clients worldwide.</p>
-        <p class="sec-body reveal-up d2">Our engineering approach prioritizes manufacturability, cost efficiency, and production scalability — ensuring every file we deliver goes straight to the shop floor without rework.</p>
-        <div class="pillars reveal-up d3">
-          <div class="pillar">
-            <div class="pillar-icon">⬡</div>
-            <div>
-              <strong>Manufacturing-First Design</strong>
-              <p>Every decision driven by factory-floor constraints — tolerances, materials, and process built in from day one.</p>
-            </div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-icon">◈</div>
-            <div>
-              <strong>Aerospace-Grade Documentation</strong>
-              <p>PMI, MBD, GD&amp;T per ASME Y14.5 — the same standard used in actual aerospace supply chains.</p>
-            </div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-icon">△</div>
-            <div>
-              <strong>Global Remote Delivery</strong>
-              <p>Structured briefs, milestone communication, and production-ready files delivered on time, worldwide.</p>
-            </div>
+      <div class="about-img-col reveal">
+        <div class="about-img-wrap">
+          <img src="vectorium-logo.png" alt="Vectorium Engineering" class="about-logo-big"/>
+          <div class="about-badge-card">
+            <span class="abc-num">100+</span>
+            <span class="abc-lbl">Manufacturing-Ready Parts Delivered</span>
           </div>
         </div>
       </div>
-      <div class="about-right reveal-up d2">
-        <div class="about-card">
-          <div class="ac-header">
-            <span class="ac-dot"></span>
-            <span class="ac-title">Firm At a Glance</span>
+      <div class="about-text-col reveal d2">
+        <div class="sec-tag">About the Firm</div>
+        <h2 class="sec-title">Welcome to<br/>Vectorium Engineering</h2>
+        <p class="sec-body">Vectorium Engineering is a precision mechanical engineering firm based in Pune, Maharashtra, delivering manufacturing-ready designs, structural systems, and complete technical documentation for industrial clients across India and worldwide.</p>
+        <p class="sec-body">Founded on real-world aerospace and industrial experience, our engineering approach prioritizes manufacturability, cost efficiency, and production scalability — ensuring every file we deliver goes straight to the shop floor without costly rework.</p>
+        <p class="sec-body">We specialize in complex aerospace component documentation, PMI/MBD workflows, GD&amp;T per ASME Y14.5, and DFM-driven design — the same standards used in global aerospace supply chains.</p>
+        <div class="about-highlights">
+          <div class="ah-item">
+            <div class="ah-icon">✦</div>
+            <div><strong>Manufacturing-First Philosophy</strong><p>Every design decision is driven by factory constraints — tolerances, materials, and process built in from day one.</p></div>
           </div>
-          <div class="ac-stats">
-            <div class="ac-stat">
-              <span class="ac-num">100+</span>
-              <span class="ac-lbl">Aerospace Parts Delivered</span>
-            </div>
-            <div class="ac-stat">
-              <span class="ac-num">AIR 13</span>
-              <span class="ac-lbl">SAE India UAV Challenge</span>
-            </div>
-            <div class="ac-stat">
-              <span class="ac-num">2</span>
-              <span class="ac-lbl">Professional CAD Platforms</span>
-            </div>
-            <div class="ac-stat">
-              <span class="ac-num">6+</span>
-              <span class="ac-lbl">Engineering Standards</span>
-            </div>
+          <div class="ah-item">
+            <div class="ah-icon">✦</div>
+            <div><strong>Aerospace-Grade Standards</strong><p>PMI, MBD, GD&amp;T per ASME Y14.5 — the same documentation standard used in real aerospace supply chains.</p></div>
           </div>
-          <div class="ac-div"></div>
-          <div class="ac-tools">
-            <span>SolidWorks</span><span>SolidEdge</span>
-            <span>GD&amp;T</span><span>PMI/MBD</span>
-            <span>DFM</span><span>FEA</span>
-          </div>
-          <div class="ac-div"></div>
-          <div class="ac-stds">
-            <div class="std-row"><span>ASME Y14.5-2018</span><span>GD&amp;T Standard</span></div>
-            <div class="std-row"><span>ISO 2768</span><span>General Tolerances</span></div>
-            <div class="std-row"><span>ISO 1101</span><span>Geometric Tolerancing</span></div>
-            <div class="std-row"><span>ASME Y14.100</span><span>Engineering Drawings</span></div>
+          <div class="ah-item">
+            <div class="ah-icon">✦</div>
+            <div><strong>Global Remote Delivery</strong><p>Structured briefs, milestone communication, and production-ready files delivered on time to clients worldwide.</p></div>
           </div>
         </div>
+        <a href="#contact" class="btn btn-primary" style="margin-top:24px;display:inline-flex;">Get in Touch →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CAPABILITIES -->
-<section class="section capabilities" id="capabilities">
+<!-- SERVICES -->
+<section class="section services" id="services">
   <div class="container">
-    <div class="sec-head reveal-up">
-      <div class="sec-tag">Core Capabilities</div>
-      <h2 class="sec-title">End-to-End Mechanical Engineering</h2>
-      <p class="sec-sub">From first concept to final inspection documentation — every deliverable is production-ready.</p>
+    <div class="sec-head reveal">
+      <div class="sec-tag">What We're Offering</div>
+      <h2 class="sec-title">Our Engineering Services</h2>
+      <p class="sec-sub">End-to-end mechanical engineering solutions — from first concept to final inspection documentation. Every deliverable is production-ready.</p>
     </div>
-    <div class="cap-grid">
-      <div class="cap-card reveal-up" data-i="A">
-        <div class="cap-num">A</div>
-        <div class="cap-ico">⬡</div>
-        <h3>Mechanical CAD</h3>
-        <p>Parametric 3D modeling and complex assemblies on SolidWorks and SolidEdge.</p>
+    <div class="srv-grid">
+      <div class="srv-card reveal">
+        <div class="srv-ico">⬡</div>
+        <h3>CAD Modeling Services</h3>
+        <p>Parametric 3D modeling, complex assemblies, and mechanism design on SolidWorks and SolidEdge. Manufacturing-constrained from day one.</p>
         <ul>
           <li>3D Part &amp; Assembly Modeling</li>
           <li>Mechanism &amp; Motion Design</li>
-          <li>Reverse Engineering</li>
           <li>2D to 3D Conversion</li>
+          <li>Multi-body Part Design</li>
         </ul>
-        <div class="cap-line"></div>
+        <a href="#contact" class="srv-link">Enquire →</a>
       </div>
-      <div class="cap-card reveal-up d1" data-i="B">
-        <div class="cap-num">B</div>
-        <div class="cap-ico">◈</div>
-        <h3>Manufacturing Engineering</h3>
-        <p>DFM analysis, tolerance stackup, and production-optimized design decisions.</p>
-        <ul>
-          <li>GD&amp;T per ASME Y14.5</li>
-          <li>Tolerance Stackup Analysis</li>
-          <li>DFM / DFA Optimization</li>
-          <li>BOM &amp; Documentation</li>
-        </ul>
-        <div class="cap-line"></div>
-      </div>
-      <div class="cap-card reveal-up d2" data-i="C">
-        <div class="cap-num">C</div>
-        <div class="cap-ico">△</div>
-        <h3>Structural Systems</h3>
-        <p>Lightweight frame and structural design with aerospace-grade precision.</p>
-        <ul>
-          <li>Frame &amp; Structural Design</li>
-          <li>Sheet Metal &amp; Weldments</li>
-          <li>UAV &amp; Airframe Structures</li>
-          <li>Lightweight Optimization</li>
-        </ul>
-        <div class="cap-line"></div>
-      </div>
-      <div class="cap-card reveal-up" data-i="D">
-        <div class="cap-num">D</div>
-        <div class="cap-ico">◇</div>
+      <div class="srv-card reveal d1">
+        <div class="srv-ico">◈</div>
         <h3>PMI / MBD Documentation</h3>
-        <p>Manufacturing information embedded directly in 3D models — zero ambiguity.</p>
+        <p>Manufacturing information embedded directly in 3D models — tolerances, GD&amp;T, surface finish, inspection data. No ambiguity for the shop floor.</p>
         <ul>
-          <li>PMI Annotation in Model</li>
+          <li>PMI Annotation in SolidEdge</li>
           <li>MBD Workflow Execution</li>
           <li>Multi-view Drawing Packages</li>
           <li>Inspection Reports (UCL/LCL)</li>
         </ul>
-        <div class="cap-line"></div>
+        <a href="#contact" class="srv-link">Enquire →</a>
       </div>
-      <div class="cap-card reveal-up d1" data-i="E">
-        <div class="cap-num">E</div>
-        <div class="cap-ico">⬢</div>
-        <h3>Validation &amp; FEA</h3>
-        <p>Structural validation and FEA simulation against real-world load cases.</p>
+      <div class="srv-card reveal d2">
+        <div class="srv-ico">△</div>
+        <h3>Technical Drawings with GD&amp;T</h3>
+        <p>ASME Y14.5-2018 compliant dimensioning, tolerance stackup analysis, and fit/function validation before production begins.</p>
         <ul>
-          <li>FEA / Structural Simulation</li>
-          <li>Load &amp; Stress Analysis</li>
-          <li>Design Refinement</li>
-          <li>Failure Mode Review</li>
+          <li>GD&amp;T per ASME Y14.5-2018</li>
+          <li>Tolerance Stackup Analysis</li>
+          <li>ISO 2768 / ISO 1101</li>
+          <li>Multi-view Drawing Sets</li>
         </ul>
-        <div class="cap-line"></div>
+        <a href="#contact" class="srv-link">Enquire →</a>
       </div>
-      <div class="cap-card reveal-up d2" data-i="F">
-        <div class="cap-num">F</div>
-        <div class="cap-ico">○</div>
-        <h3>Technical Documentation</h3>
-        <p>Complete production packages ready to go directly to your manufacturer.</p>
+      <div class="srv-card reveal">
+        <div class="srv-ico">◇</div>
+        <h3>DFM / DFA Analysis</h3>
+        <p>Design for Manufacturability and Assembly review — catching production problems at design stage, not on the shop floor. Saves time and tooling cost.</p>
         <ul>
-          <li>Drawing Packages (15+ Views)</li>
-          <li>Bill of Materials</li>
-          <li>Assembly Instructions</li>
-          <li>Production Specifications</li>
+          <li>DFM Analysis &amp; Report</li>
+          <li>Material &amp; Process Selection</li>
+          <li>Cost Reduction Engineering</li>
+          <li>Sheet Metal &amp; Weldment DFM</li>
         </ul>
-        <div class="cap-line"></div>
+        <a href="#contact" class="srv-link">Enquire →</a>
+      </div>
+      <div class="srv-card reveal d1">
+        <div class="srv-ico">⬢</div>
+        <h3>Structural Systems Design</h3>
+        <p>Lightweight frame and structural design with aerospace-grade precision — UAV airframes, industrial frames, and custom structural assemblies.</p>
+        <ul>
+          <li>Frame &amp; Structural Design</li>
+          <li>UAV &amp; Airframe Structures</li>
+          <li>Sheet Metal &amp; Weldments</li>
+          <li>Lightweight Optimization</li>
+        </ul>
+        <a href="#contact" class="srv-link">Enquire →</a>
+      </div>
+      <div class="srv-card reveal d2">
+        <div class="srv-ico">◎</div>
+        <h3>FEA Analysis</h3>
+        <p>Structural validation and finite element simulation against real-world load cases — verify your design before manufacturing begins.</p>
+        <ul>
+          <li>Static &amp; Dynamic FEA</li>
+          <li>Stress &amp; Deflection Analysis</li>
+          <li>Load Case Definition</li>
+          <li>Design Refinement Reports</li>
+        </ul>
+        <a href="#contact" class="srv-link">Enquire →</a>
+      </div>
+      <div class="srv-card reveal">
+        <div class="srv-ico">○</div>
+        <h3>Reverse Engineering</h3>
+        <p>Recreate accurate 3D models from physical parts, legacy drawings, or worn components — with full manufacturing documentation.</p>
+        <ul>
+          <li>Physical Part to 3D Model</li>
+          <li>Legacy Drawing Digitization</li>
+          <li>Dimensional Inspection</li>
+          <li>Full Drawing Package Output</li>
+        </ul>
+        <a href="#contact" class="srv-link">Enquire →</a>
+      </div>
+      <div class="srv-card reveal d1">
+        <div class="srv-ico">⬡</div>
+        <h3>Complete Engineering Package</h3>
+        <p>End-to-end delivery from concept to inspection-ready documentation — 3D model, drawings, GD&amp;T, PMI, BOM, and assembly instructions.</p>
+        <ul>
+          <li>Concept to Complete Drawing Set</li>
+          <li>PMI + GD&amp;T + BOM</li>
+          <li>Inspection Specification Sheet</li>
+          <li>Assembly &amp; Production Docs</li>
+        </ul>
+        <a href="#contact" class="srv-link">Enquire →</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CTA BANNER 1 -->
+<div class="cta-banner">
+  <div class="container">
+    <div class="ctab-inner">
+      <div class="ctab-text reveal">
+        <h2>One-Stop Solution for Mechanical Engineering Services.</h2>
+        <p>Let's take a chance to collaborate on your next project.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary reveal d2">Contact Us →</a>
+    </div>
+  </div>
+</div>
+
 <!-- INDUSTRIES -->
 <section class="section industries" id="industries">
   <div class="container">
-    <div class="sec-head reveal-up">
-      <div class="sec-tag">Industries Served</div>
+    <div class="sec-head reveal">
+      <div class="sec-tag">Industries We Serve</div>
       <h2 class="sec-title">Built for Demanding Sectors</h2>
+      <p class="sec-sub">Vectorium Engineering serves clients across high-precision, high-stakes manufacturing environments.</p>
     </div>
-    <div class="ind-layout">
-      <div class="ind-featured reveal-up">
-        <div class="if-tag">Primary Sector</div>
-        <div class="if-icon">✈</div>
+    <div class="ind-grid">
+      <a href="#contact" class="ind-card reveal">
+        <div class="ind-ico">✈</div>
         <h3>Aerospace &amp; UAV</h3>
-        <p>Structural components, airframe assemblies, ground support equipment, and UAV systems. Hands-on national competition and professional aerospace experience.</p>
-        <div class="if-chips">
-          <span>Fixed-Wing UAV</span>
-          <span>Airframe Structures</span>
-          <span>Aerospace PMI</span>
-          <span>GSE Design</span>
-          <span>Lightweight Structures</span>
-        </div>
-      </div>
-      <div class="ind-grid">
-        <div class="ind-card reveal-up d1">
-          <div class="ic-ico">⚙</div>
-          <h4>Industrial Manufacturing</h4>
-          <p>Production machinery, material handling, and custom industrial assemblies with DFM-first engineering.</p>
-        </div>
-        <div class="ind-card reveal-up d2">
-          <div class="ic-ico">⚡</div>
-          <h4>Electrical &amp; Energy</h4>
-          <p>Enclosures, mounting hardware, and structural assemblies for electrical systems. Lightning protection experience.</p>
-        </div>
-        <div class="ind-card reveal-up d1">
-          <div class="ic-ico">◎</div>
-          <h4>Product Development</h4>
-          <p>Engineering support for hardware startups from prototype to full production documentation.</p>
-        </div>
-        <div class="ind-card reveal-up d2">
-          <div class="ic-ico">⬡</div>
-          <h4>Automation &amp; Tooling</h4>
-          <p>Custom jigs, fixtures, and tooling design for high-volume production environments.</p>
-        </div>
-        <div class="ind-card reveal-up d1">
-          <div class="ic-ico">◈</div>
-          <h4>Defence Adjacent</h4>
-          <p>Structural hardware, custom components, and assemblies for defence-adjacent applications.</p>
-        </div>
-        <div class="ind-card reveal-up d2">
-          <div class="ic-ico">⛵</div>
-          <h4>Marine &amp; Transport</h4>
-          <p>Structural assemblies, mounting systems, and custom fabrications for transport equipment.</p>
-        </div>
-      </div>
+        <p>Airframe structures, aerospace components, UAV systems, and ground support equipment.</p>
+      </a>
+      <a href="#contact" class="ind-card reveal d1">
+        <div class="ind-ico">🏭</div>
+        <h3>Industrial Manufacturing</h3>
+        <p>Production machinery, material handling systems, and custom industrial assemblies.</p>
+      </a>
+      <a href="#contact" class="ind-card reveal d2">
+        <div class="ind-ico">⚡</div>
+        <h3>Electrical &amp; Energy</h3>
+        <p>Enclosures, mounting hardware, and structural assemblies for electrical and energy systems.</p>
+      </a>
+      <a href="#contact" class="ind-card reveal">
+        <div class="ind-ico">🚗</div>
+        <h3>Automotive</h3>
+        <p>Body panels, brackets, jigs, fixtures, and production tooling for automotive manufacturers.</p>
+      </a>
+      <a href="#contact" class="ind-card reveal d1">
+        <div class="ind-ico">◎</div>
+        <h3>Product Development</h3>
+        <p>Engineering support for hardware startups from prototype through full production documentation.</p>
+      </a>
+      <a href="#contact" class="ind-card reveal d2">
+        <div class="ind-ico">⚙</div>
+        <h3>Automation &amp; Tooling</h3>
+        <p>Custom jigs, fixtures, gauges, and tooling design for high-volume production environments.</p>
+      </a>
+      <a href="#contact" class="ind-card reveal">
+        <div class="ind-ico">🛡</div>
+        <h3>Defence Adjacent</h3>
+        <p>Structural hardware, custom assemblies, and precision components for defence applications.</p>
+      </a>
+      <a href="#contact" class="ind-card reveal d1">
+        <div class="ind-ico">⛵</div>
+        <h3>Marine &amp; Transport</h3>
+        <p>Structural assemblies, mounting systems, and custom fabrications for transport equipment.</p>
+      </a>
     </div>
   </div>
 </section>
@@ -356,98 +375,137 @@
 <!-- PROJECTS -->
 <section class="section projects" id="projects">
   <div class="container">
-    <div class="sec-head reveal-up">
+    <div class="sec-head reveal">
       <div class="sec-tag">Project Portfolio</div>
       <h2 class="sec-title">Engineering in Action</h2>
       <p class="sec-sub">Real projects. Real manufacturing constraints. Real results.</p>
     </div>
-    <div class="proj-layout">
-      <div class="proj-featured reveal-up">
-        <div class="pf-top">
-          <span class="pf-cat">Aerospace · Competition</span>
-          <span class="pf-badge">AIR 13 — SAE India 2024</span>
+    <div class="proj-grid">
+      <div class="proj-card proj-big reveal">
+        <div class="proj-top">
+          <span class="proj-cat">Aerospace · UAV</span>
+          <span class="proj-badge">Manufactured &amp; Tested</span>
         </div>
-        <h3>Fixed-Wing UAV for Emergency Supply Delivery</h3>
-        <p>Designed and fabricated a fixed-wing UAV for autonomous supply-drop missions. Led structural design including carbon rod reinforcement in foam airframe — achieving lightweight, high stiffness, and reduced build time. Taken from CAD to flight-tested hardware.</p>
-        <div class="pf-tags">
+        <h3>Fixed-Wing UAV — Structural Design</h3>
+        <p>Complete structural design of a fixed-wing UAV for autonomous supply-drop operations. Led structural design including a carbon rod reinforcement solution in foam airframe — achieving lightweight, high stiffness, and reduced build time simultaneously. Taken from CAD to flight-tested hardware.</p>
+        <div class="proj-tags">
           <span>SolidWorks</span><span>Structural Analysis</span>
           <span>Lightweight Optimization</span><span>Flight Testing</span>
         </div>
-        <div class="pf-outcomes">
-          <div class="pfo">
-            <strong>Challenge</strong>
-            <span>Excessive weight with insufficient stiffness in foam airframe</span>
-          </div>
-          <div class="pfo">
-            <strong>Solution</strong>
-            <span>Carbon rod reinforcement — maintained stiffness, reduced structural weight</span>
-          </div>
-          <div class="pfo">
-            <strong>Result</strong>
-            <span>All India Rank 13, SAE India Drone Development Challenge 2024</span>
-          </div>
+        <div class="proj-outcomes">
+          <div class="po"><strong>Challenge</strong><span>Excessive weight with insufficient stiffness in foam airframe</span></div>
+          <div class="po"><strong>Solution</strong><span>Carbon rod reinforcement — maintained stiffness while reducing structural weight</span></div>
+          <div class="po"><strong>Result</strong><span>Production-ready, flight-tested UAV delivered on schedule</span></div>
         </div>
       </div>
-      <div class="proj-cards">
-        <div class="proj-card reveal-up d1">
-          <div class="pc-top">
-            <span>Industrial · Product</span>
-            <span class="pc-badge">Manufactured</span>
+      <div class="proj-side">
+        <div class="proj-card reveal d1">
+          <div class="proj-top">
+            <span class="proj-cat">Industrial · Product Design</span>
+            <span class="proj-badge">In Production</span>
           </div>
           <h4>Lightning Arrester Design</h4>
-          <p>Complete design from concept through DFM to manufacturing-ready files. Product now in active production for an industrial electrical firm.</p>
-          <div class="pc-tags"><span>SolidWorks</span><span>DFM</span><span>Product Design</span></div>
+          <p>Complete design from concept through DFM analysis to manufacturing-ready files. Product now in active production for an industrial electrical systems firm.</p>
+          <div class="proj-tags"><span>SolidWorks</span><span>DFM</span><span>Product Design</span></div>
         </div>
-        <div class="proj-card reveal-up d2">
-          <div class="pc-top">
-            <span>Aerospace · Professional</span>
-            <span class="pc-badge">100+ Parts</span>
+        <div class="proj-card reveal d2">
+          <div class="proj-top">
+            <span class="proj-cat">Aerospace · Documentation</span>
+            <span class="proj-badge">100+ Parts</span>
           </div>
           <h4>Aerospace PMI/MBD Documentation</h4>
-          <p>Complex aerospace documentation — up to 15 views per drawing, section views, PMI embedded in 3D model, inspection reports with UCL/LCL values.</p>
-          <div class="pc-tags"><span>SolidEdge</span><span>PMI/MBD</span><span>GD&amp;T</span></div>
+          <p>Complex aerospace part documentation — up to 15 drawing views, section views, PMI embedded in 3D model, and inspection reports with UCL/LCL dimensional values.</p>
+          <div class="proj-tags"><span>SolidEdge</span><span>PMI/MBD</span><span>GD&amp;T</span></div>
         </div>
-        <div class="proj-card reveal-up d1">
-          <div class="pc-top">
-            <span>Industrial · Enclosure</span>
-            <span class="pc-badge">Production</span>
+        <div class="proj-card reveal d1">
+          <div class="proj-top">
+            <span class="proj-cat">Industrial · Enclosure</span>
+            <span class="proj-badge">Production</span>
           </div>
           <h4>Lightning Counter Enclosure</h4>
-          <p>Enclosure for a best-selling lightning counter product — meeting manufacturing and field assembly constraints for volume production.</p>
-          <div class="pc-tags"><span>SolidWorks</span><span>Sheet Metal</span><span>DFM</span></div>
+          <p>Sheet metal enclosure design for a high-volume lightning counter product — meeting manufacturing and field assembly constraints for volume production.</p>
+          <div class="proj-tags"><span>SolidWorks</span><span>Sheet Metal</span><span>DFM</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="section process" id="process">
+<!-- WHY US -->
+<section class="section why-us" id="why-us">
   <div class="container">
-    <div class="sec-head reveal-up">
-      <div class="sec-tag">Our Process</div>
-      <h2 class="sec-title">Structured. Transparent. Zero Surprises.</h2>
+    <div class="why-grid">
+      <div class="why-left reveal">
+        <div class="sec-tag">Why Choose Us</div>
+        <h2 class="sec-title">Why Choose Vectorium Engineering?</h2>
+        <p class="sec-body">We combine hands-on aerospace and industrial experience with rigorous engineering standards to deliver precision that your manufacturer can work with directly.</p>
+        <a href="#contact" class="btn btn-primary" style="margin-top:20px;display:inline-flex;">Start a Project →</a>
+      </div>
+      <div class="why-right reveal d2">
+        <div class="why-list">
+          <div class="why-item">
+            <div class="wi-num">01</div>
+            <div class="wi-body"><strong>Aerospace-Grade Documentation</strong><p>PMI/MBD, GD&T, and inspection specs to the same standard used in real aerospace supply chains — ASME Y14.5-2018.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="wi-num">02</div>
+            <div class="wi-body"><strong>Manufacturing-First Approach</strong><p>Every design decision considers the factory floor — DFM built in from day one, not reviewed at the end.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="wi-num">03</div>
+            <div class="wi-body"><strong>Dual CAD Platform Expertise</strong><p>Professional experience on both SolidWorks and SolidEdge — flexibility for your existing workflow and tools.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="wi-num">04</div>
+            <div class="wi-body"><strong>Production-Ready Deliverables</strong><p>Files go directly to your manufacturer without rework. We support revisions until your shop floor accepts the files.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="wi-num">05</div>
+            <div class="wi-body"><strong>Structured, Transparent Process</strong><p>Clear project briefs, milestone communication, and defined scope — zero surprises from start to delivery.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="wi-num">06</div>
+            <div class="wi-body"><strong>Fast Turnaround · Global Remote</strong><p>24-hour response time, remote delivery to clients worldwide, and competitive pricing with maximum engineering value.</p></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="proc-grid">
-      <div class="proc-step reveal-up">
-        <div class="ps-num">01</div>
-        <h3>Requirement Review</h3>
-        <p>Technical specification analysis and scope definition. You receive a structured project brief before work begins — no ambiguity.</p>
+  </div>
+</section>
+
+<!-- TOOLS & STANDARDS -->
+<section class="section tools-section" id="tools">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Tools &amp; Standards</div>
+      <h2 class="sec-title">Engineering Tools &amp; Standards We Use</h2>
+    </div>
+    <div class="tools-grid">
+      <div class="tools-col reveal">
+        <h3>CAD Platforms</h3>
+        <div class="tool-list">
+          <div class="tool-row"><span class="tr-name">SolidWorks</span><span class="tr-desc">Primary CAD — 3D Modeling, Assemblies, Drawings</span></div>
+          <div class="tool-row"><span class="tr-name">SolidEdge</span><span class="tr-desc">PMI / MBD Workflows, Aerospace Documentation</span></div>
+          <div class="tool-row"><span class="tr-name">AutoCAD</span><span class="tr-desc">2D Technical Drawings</span></div>
+        </div>
       </div>
-      <div class="proc-step reveal-up d1">
-        <div class="ps-num">02</div>
-        <h3>Engineering Development</h3>
-        <p>CAD modeling, DFM analysis, structural assessment, and GD&amp;T application — manufacturing constraints drive every decision.</p>
+      <div class="tools-col reveal d1">
+        <h3>Engineering Standards</h3>
+        <div class="tool-list">
+          <div class="tool-row"><span class="tr-name">ASME Y14.5-2018</span><span class="tr-desc">GD&amp;T Dimensioning &amp; Tolerancing</span></div>
+          <div class="tool-row"><span class="tr-name">ISO 2768</span><span class="tr-desc">General Tolerances</span></div>
+          <div class="tool-row"><span class="tr-name">ISO 1101</span><span class="tr-desc">Geometric Tolerancing</span></div>
+          <div class="tool-row"><span class="tr-name">ASME Y14.100</span><span class="tr-desc">Engineering Drawing Practices</span></div>
+        </div>
       </div>
-      <div class="proc-step reveal-up d2">
-        <div class="ps-num">03</div>
-        <h3>Manufacturing Documentation</h3>
-        <p>Complete drawing packages, PMI/MBD annotation, BOM, and inspection specifications — ready to go directly to your manufacturer.</p>
-      </div>
-      <div class="proc-step reveal-up d3">
-        <div class="ps-num">04</div>
-        <h3>Delivery &amp; Support</h3>
-        <p>Final file delivery with revision support until your manufacturer accepts the files. Engineering change management included.</p>
+      <div class="tools-col reveal d2">
+        <h3>Deliverable Formats</h3>
+        <div class="tool-list">
+          <div class="tool-row"><span class="tr-name">STEP / IGES</span><span class="tr-desc">Universal CAD Exchange</span></div>
+          <div class="tool-row"><span class="tr-name">PDF Drawings</span><span class="tr-desc">Shop Floor Documentation</span></div>
+          <div class="tool-row"><span class="tr-name">Native CAD</span><span class="tr-desc">SW / SE / DXF / DWG Files</span></div>
+          <div class="tool-row"><span class="tr-name">BOM / Specs</span><span class="tr-desc">Excel, PDF, Word Formats</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -456,45 +514,48 @@
 <!-- PACKAGES -->
 <section class="section packages" id="packages">
   <div class="container">
-    <div class="sec-head reveal-up">
+    <div class="sec-head reveal">
       <div class="sec-tag">Service Packages</div>
       <h2 class="sec-title">Clear Scope. Clear Pricing.</h2>
-      <p class="sec-sub">Fixed-scope packages — you know exactly what you get before work starts.</p>
+      <p class="sec-sub">Fixed-scope packages — you know exactly what you get before work starts. Custom scope? Send us a brief.</p>
     </div>
     <div class="pkg-grid">
-      <div class="pkg-card reveal-up">
-        <div class="pk-name">Essential</div>
-        <div class="pk-tagline">Single part, fast turnaround</div>
-        <div class="pk-price">From ₹3,000</div>
-        <ul class="pk-list">
+      <div class="pkg-card reveal">
+        <div class="pkg-icon">⬡</div>
+        <div class="pkg-name">Essential</div>
+        <div class="pkg-tagline">Single part, fast turnaround</div>
+        <div class="pkg-price">From <span>₹3,000</span></div>
+        <ul class="pkg-list">
           <li>3D CAD Model</li>
           <li>Manufacturing Drawing</li>
           <li>Basic GD&amp;T Annotation</li>
           <li>2 Revision Rounds</li>
           <li>STEP / IGES + Native Files</li>
         </ul>
-        <a href="#contact" class="pk-btn">Get Started</a>
+        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started</a>
       </div>
-      <div class="pkg-card pk-hot reveal-up d1">
-        <div class="pk-popular">Most Requested</div>
-        <div class="pk-name">Professional</div>
-        <div class="pk-tagline">Assembly + full documentation</div>
-        <div class="pk-price">From ₹8,000</div>
-        <ul class="pk-list">
+      <div class="pkg-card pkg-hot reveal d1">
+        <div class="pkg-badge">Most Requested</div>
+        <div class="pkg-icon">◈</div>
+        <div class="pkg-name">Professional</div>
+        <div class="pkg-tagline">Assembly + full documentation</div>
+        <div class="pkg-price">From <span>₹8,000</span></div>
+        <ul class="pkg-list">
           <li>Complete Assembly + All Parts</li>
-          <li>Full Drawing Package with GD&amp;T</li>
+          <li>Full Drawing Package + GD&amp;T</li>
           <li>DFM Review &amp; Report</li>
           <li>Bill of Materials</li>
           <li>3 Revision Rounds</li>
           <li>All File Formats</li>
         </ul>
-        <a href="#contact" class="pk-btn pk-btn-accent">Get Started</a>
+        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started</a>
       </div>
-      <div class="pkg-card reveal-up d2">
-        <div class="pk-name">Aerospace</div>
-        <div class="pk-tagline">PMI/MBD + inspection-ready</div>
-        <div class="pk-price">From ₹15,000</div>
-        <ul class="pk-list">
+      <div class="pkg-card reveal d2">
+        <div class="pkg-icon">△</div>
+        <div class="pkg-name">Aerospace</div>
+        <div class="pkg-tagline">PMI/MBD + inspection-ready</div>
+        <div class="pkg-price">From <span>₹15,000</span></div>
+        <ul class="pkg-list">
           <li>3D Model with PMI / MBD</li>
           <li>Multi-view Drawing Package</li>
           <li>Full GD&amp;T per ASME Y14.5</li>
@@ -502,65 +563,87 @@
           <li>DFM + Tolerance Stackup</li>
           <li>Revisions Until Manufacturer Accepts</li>
         </ul>
-        <a href="#contact" class="pk-btn">Get Started</a>
+        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started</a>
       </div>
     </div>
-    <p class="pkg-note reveal-up">Custom scope? <a href="#contact">Send us a brief</a> — we'll quote your exact requirements.</p>
   </div>
 </section>
+
+<!-- CTA BANNER 2 -->
+<div class="cta-banner">
+  <div class="container">
+    <div class="ctab-inner">
+      <div class="ctab-text reveal">
+        <h2>Do You Need Engineering Support for Your Project?</h2>
+        <p>Send us a brief — we respond within 24 hours.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary reveal d2">Get a Free Quote →</a>
+    </div>
+  </div>
+</div>
 
 <!-- CONTACT -->
 <section class="section contact" id="contact">
   <div class="container">
     <div class="contact-grid">
-      <div class="contact-left reveal-up">
+      <div class="contact-info reveal">
         <div class="sec-tag">Get in Touch</div>
-        <h2 class="sec-title">Start Your Project</h2>
-        <p class="sec-body">Send a project brief or ask a question. We respond within 24 hours.</p>
-        <div class="c-details">
-          <a href="mailto:contact@vectoriumengineering.com" class="c-item">
-            <span class="c-ico">✉</span>
-            <div><strong>Email</strong><span>contact@vectoriumengineering.com</span></div>
+        <h2 class="sec-title">Start Your Project Today</h2>
+        <p class="sec-body">Send a project brief or ask a question. We respond within 24 hours — always.</p>
+        <div class="ci-list">
+          <a href="mailto:contact@vectoriumengineering.com" class="ci-item">
+            <span class="ci-ico">✉</span>
+            <div><strong>Email Us</strong><span>contact@vectoriumengineering.com</span></div>
           </a>
-          <div class="c-item">
-            <span class="c-ico">☎</span>
-            <div><strong>Phone</strong><span>+91 00000 00000</span></div>
+          <a href="tel:+910000000000" class="ci-item">
+            <span class="ci-ico">📞</span>
+            <div><strong>Call Us</strong><span>+91 00000 00000</span></div>
+          </a>
+          <div class="ci-item">
+            <span class="ci-ico">📍</span>
+            <div><strong>Location</strong><span>Pune, Maharashtra, India</span></div>
           </div>
-          <div class="c-item">
-            <span class="c-ico">◎</span>
-            <div><strong>Location</strong><span>Pune, Maharashtra · Remote Global</span></div>
+          <div class="ci-item">
+            <span class="ci-ico">🌐</span>
+            <div><strong>Remote Services</strong><span>Serving clients globally</span></div>
           </div>
-          <div class="c-item">
-            <span class="c-ico">⏱</span>
+          <div class="ci-item">
+            <span class="ci-ico">⏱</span>
             <div><strong>Response Time</strong><span>Within 24 hours</span></div>
           </div>
         </div>
+        <div class="ci-socials">
+          <span>Follow Us:</span>
+          <a href="#" class="ci-soc">LinkedIn</a>
+          <a href="#" class="ci-soc">Instagram</a>
+          <a href="#" class="ci-soc">YouTube</a>
+        </div>
       </div>
-      <div class="contact-right reveal-up d2">
-        <form class="c-form" id="cForm" onsubmit="sendForm(event)">
+      <div class="contact-form reveal d2">
+        <form id="cForm" onsubmit="sendForm(event)">
           <div class="f-row">
-            <div class="fg"><label>Company / Name</label><input type="text" placeholder="Your company or name" required/></div>
-            <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com" required/></div>
+            <div class="fg"><label>Your Name / Company</label><input type="text" placeholder="Name or company" required/></div>
+            <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com" required/></div>
           </div>
+          <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+91 00000 00000"/></div>
           <div class="fg">
             <label>Service Required</label>
             <select>
               <option value="">Select a service...</option>
-              <option>Mechanical CAD Modeling</option>
+              <option>CAD Modeling Services</option>
               <option>PMI / MBD Documentation</option>
-              <option>GD&amp;T &amp; Tolerance Analysis</option>
-              <option>DFM / DFA Review</option>
+              <option>Technical Drawings with GD&amp;T</option>
+              <option>DFM / DFA Analysis</option>
               <option>Structural Systems Design</option>
+              <option>FEA Analysis</option>
+              <option>Reverse Engineering</option>
               <option>Complete Engineering Package</option>
               <option>Other / Not Sure</option>
             </select>
           </div>
-          <div class="fg">
-            <label>Project Brief</label>
-            <textarea rows="5" placeholder="Describe your project — what needs to be designed, manufactured, or documented..."></textarea>
-          </div>
-          <button type="submit" class="f-sub" id="fBtn">Send Brief →</button>
-          <div class="f-ok" id="fOk">✓ Brief received. We'll respond within 24 hours.</div>
+          <div class="fg"><label>Project Brief</label><textarea rows="5" placeholder="Describe your project — what needs to be designed, manufactured, or documented..."></textarea></div>
+          <button type="submit" class="btn btn-primary" id="fBtn" style="width:100%;justify-content:center;">Send Enquiry →</button>
+          <div class="f-ok" id="fOk">✓ Enquiry received! We will respond within 24 hours.</div>
         </form>
       </div>
     </div>
@@ -570,37 +653,56 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <div class="foot-top">
-      <div class="foot-brand">
+    <div class="foot-grid">
+      <div class="foot-about">
         <img src="vectorium-logo.png" alt="Vectorium Engineering" class="foot-logo"/>
         <p class="foot-slogan">"Engineering in Motion"</p>
-        <p class="foot-desc">Manufacturing-ready mechanical engineering for industrial clients worldwide.</p>
-      </div>
-      <div class="foot-nav">
-        <div class="fn-col">
-          <strong>Services</strong>
-          <a href="#capabilities">Mechanical CAD</a>
-          <a href="#capabilities">PMI / MBD</a>
-          <a href="#capabilities">GD&amp;T &amp; Tolerancing</a>
-          <a href="#capabilities">DFM / DFA</a>
-          <a href="#capabilities">FEA Simulation</a>
+        <p class="foot-desc">Vectorium Engineering is a precision mechanical engineering firm delivering manufacturing-ready designs and technical documentation for industrial clients across India and worldwide.</p>
+        <div class="foot-socials">
+          <a href="#" class="fsoc">LinkedIn</a>
+          <a href="#" class="fsoc">Instagram</a>
+          <a href="#" class="fsoc">YouTube</a>
         </div>
-        <div class="fn-col">
-          <strong>Company</strong>
-          <a href="#about">About</a>
-          <a href="#industries">Industries</a>
-          <a href="#projects">Projects</a>
-          <a href="#process">Process</a>
-          <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">CAD Modeling</a>
+        <a href="#services">PMI / MBD Documentation</a>
+        <a href="#services">Technical Drawings + GD&amp;T</a>
+        <a href="#services">DFM / DFA Analysis</a>
+        <a href="#services">Structural Systems</a>
+        <a href="#services">FEA Analysis</a>
+        <a href="#services">Reverse Engineering</a>
+        <a href="#services">Complete Packages</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#industries">Industries</a>
+        <a href="#projects">Projects</a>
+        <a href="#why-us">Why Choose Us</a>
+        <a href="#packages">Pricing</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact Info</h4>
+        <div class="foot-contact">
+          <div>📍 Pune, Maharashtra, India</div>
+          <div>📞 +91 00000 00000</div>
+          <div>✉ contact@vectoriumengineering.com</div>
+          <div>⏱ Mon–Sat: 9 AM – 7 PM IST</div>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2025 Vectorium Engineering. All rights reserved.</span>
-      <span>Pune, India · Remote Global</span>
+      <span>© 2025 Vectorium Engineering. All Rights Reserved.</span>
+      <span>Pune, India · Remote Global Delivery</span>
     </div>
   </div>
 </footer>
+
+<!-- Back to Top -->
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
 <script src="script.js"></script>
 </body>

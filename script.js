@@ -1,126 +1,101 @@
-// VECTORIUM ENGINEERING — SCRIPT.JS
+// VECTORIUM ENGINEERING — script.js
 
-// ── PRELOADER ─────────────────────────────────────
+// ── PRELOADER ────────────────────────────────────
 const preloader = document.getElementById('preloader');
-const preFill = document.getElementById('preFill');
-const prePct = document.getElementById('prePct');
+const preFill   = document.getElementById('preFill');
+const preTxt    = document.getElementById('preTxt');
 let pct = 0;
-const fillInterval = setInterval(() => {
-  pct += Math.random() * 12 + 4;
+const iv = setInterval(() => {
+  pct += Math.random() * 14 + 4;
   if (pct >= 100) {
     pct = 100;
-    clearInterval(fillInterval);
-    setTimeout(() => preloader.classList.add('out'), 300);
+    clearInterval(iv);
+    setTimeout(() => preloader.classList.add('out'), 350);
   }
   preFill.style.width = pct + '%';
-  if (prePct) prePct.textContent = Math.floor(pct) + '%';
+  if (preTxt) preTxt.textContent = Math.floor(pct) + '%';
 }, 80);
 
-// ── CUSTOM CURSOR ─────────────────────────────────
-const cursor = document.getElementById('cursor');
-const follower = document.getElementById('cursorFollower');
-let mx = 0, my = 0, fx = 0, fy = 0;
-
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  if (cursor) { cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; }
-});
-
-function animFollower() {
-  fx += (mx - fx) * 0.14;
-  fy += (my - fy) * 0.14;
-  if (follower) { follower.style.left = fx + 'px'; follower.style.top = fy + 'px'; }
-  requestAnimationFrame(animFollower);
-}
-animFollower();
-
-document.querySelectorAll('a, button, .cap-card, .ind-card, .proj-card, .pkg-card').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    if (cursor) { cursor.style.width = '16px'; cursor.style.height = '16px'; }
-    if (follower) { follower.style.width = '46px'; follower.style.height = '46px'; }
-  });
-  el.addEventListener('mouseleave', () => {
-    if (cursor) { cursor.style.width = '8px'; cursor.style.height = '8px'; }
-    if (follower) { follower.style.width = '28px'; follower.style.height = '28px'; }
-  });
-});
-
-// ── HEADER SCROLL ─────────────────────────────────
+// ── HEADER SCROLL ────────────────────────────────
 const header = document.getElementById('header');
+const backTop = document.getElementById('backTop');
 window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 50);
+  header.classList.toggle('scrolled', window.scrollY > 60);
+  if (backTop) backTop.classList.toggle('show', window.scrollY > 400);
 }, { passive: true });
 
-// ── MOBILE NAV ────────────────────────────────────
-const navToggle = document.getElementById('navToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-navToggle.addEventListener('click', e => {
+// ── BACK TO TOP ──────────────────────────────────
+if (backTop) {
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+// ── MOBILE NAV ───────────────────────────────────
+const burger = document.getElementById('burger');
+const mobNav = document.getElementById('mobNav');
+burger.addEventListener('click', e => {
   e.stopPropagation();
   header.classList.toggle('open');
-  mobileMenu.classList.toggle('show');
+  mobNav.classList.toggle('show');
 });
 document.addEventListener('click', e => {
   if (!header.contains(e.target)) {
     header.classList.remove('open');
-    mobileMenu.classList.remove('show');
+    mobNav.classList.remove('show');
   }
 });
 function closeMob() {
   header.classList.remove('open');
-  mobileMenu.classList.remove('show');
+  mobNav.classList.remove('show');
 }
 
-// ── SMOOTH SCROLL ─────────────────────────────────
+// ── SMOOTH SCROLL ────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
     if (!target) return;
     e.preventDefault();
-    const top = target.getBoundingClientRect().top + window.scrollY - 76;
+    const top = target.getBoundingClientRect().top + window.scrollY - 80;
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
 
-// ── SCROLL REVEAL ─────────────────────────────────
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObs.unobserve(e.target);
+// ── SCROLL REVEAL ────────────────────────────────
+const revObs = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      en.target.classList.add('visible');
+      revObs.unobserve(en.target);
     }
   });
-}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-document.querySelectorAll('.reveal-up').forEach(el => revealObs.observe(el));
+}, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
 
-// ── HERO CANVAS PARTICLES ─────────────────────────
+// ── HERO CANVAS ──────────────────────────────────
 const canvas = document.getElementById('heroCanvas');
 if (canvas) {
   const ctx = canvas.getContext('2d');
-  let W, H;
-  const particles = [];
-
-  function resize() {
-    W = canvas.width = canvas.offsetWidth;
+  let W, H, pts = [];
+  const resize = () => {
+    W = canvas.width  = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
-  }
+  };
   resize();
   window.addEventListener('resize', resize, { passive: true });
 
-  for (let i = 0; i < 60; i++) {
-    particles.push({
+  for (let i = 0; i < 55; i++) {
+    pts.push({
       x: Math.random(), y: Math.random(),
-      vx: (Math.random() - 0.5) * 0.15,
-      vy: (Math.random() - 0.5) * 0.15,
-      r: Math.random() * 1.8 + 0.5,
-      a: Math.random() * 0.35 + 0.05
+      vx: (Math.random() - 0.5) * 0.14,
+      vy: (Math.random() - 0.5) * 0.14,
+      r: Math.random() * 1.6 + 0.5,
+      a: Math.random() * 0.3 + 0.06
     });
   }
 
-  function drawParticles() {
+  (function draw() {
     ctx.clearRect(0, 0, W, H);
-    particles.forEach(p => {
-      p.x += p.vx / W;
-      p.y += p.vy / H;
+    pts.forEach(p => {
+      p.x += p.vx / W; p.y += p.vy / H;
       if (p.x < 0) p.x = 1; if (p.x > 1) p.x = 0;
       if (p.y < 0) p.y = 1; if (p.y > 1) p.y = 0;
       ctx.beginPath();
@@ -128,102 +103,75 @@ if (canvas) {
       ctx.fillStyle = `rgba(47,141,255,${p.a})`;
       ctx.fill();
     });
-
-    // draw connecting lines
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = (particles[i].x - particles[j].x) * W;
-        const dy = (particles[i].y - particles[j].y) * H;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i + 1; j < pts.length; j++) {
+        const dx = (pts[i].x - pts[j].x) * W;
+        const dy = (pts[i].y - pts[j].y) * H;
+        const d  = Math.sqrt(dx * dx + dy * dy);
+        if (d < 110) {
           ctx.beginPath();
-          ctx.moveTo(particles[i].x * W, particles[i].y * H);
-          ctx.lineTo(particles[j].x * W, particles[j].y * H);
-          ctx.strokeStyle = `rgba(47,141,255,${0.08 * (1 - dist / 120)})`;
+          ctx.moveTo(pts[i].x * W, pts[i].y * H);
+          ctx.lineTo(pts[j].x * W, pts[j].y * H);
+          ctx.strokeStyle = `rgba(47,141,255,${0.07 * (1 - d / 110)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
       }
     }
-    requestAnimationFrame(drawParticles);
-  }
-  drawParticles();
+    requestAnimationFrame(draw);
+  })();
 }
 
-// ── ACTIVE NAV HIGHLIGHT ──────────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav a');
-new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      navLinks.forEach(a => {
-        a.style.color = '';
-        if (a.getAttribute('href') === '#' + e.target.id) a.style.color = 'var(--accent)';
-      });
-    }
-  });
-}, { threshold: 0.35 }).observe && sections.forEach(s => {
+// ── ACTIVE NAV ───────────────────────────────────
+const secs = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('nav a');
+secs.forEach(sec => {
   new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        navLinks.forEach(a => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        navAs.forEach(a => {
           a.style.color = '';
-          if (a.getAttribute('href') === '#' + e.target.id) a.style.color = 'var(--accent)';
+          if (a.getAttribute('href') === '#' + en.target.id) a.style.color = 'var(--accent)';
         });
       }
     });
-  }, { threshold: 0.35 }).observe(s);
+  }, { threshold: 0.35 }).observe(sec);
 });
 
-// ── CONTACT FORM ──────────────────────────────────
+// ── CONTACT FORM ─────────────────────────────────
 function sendForm(e) {
   e.preventDefault();
-  const btn = document.getElementById('fBtn');
-  const ok = document.getElementById('fOk');
+  const btn  = document.getElementById('fBtn');
+  const ok   = document.getElementById('fOk');
   const form = document.getElementById('cForm');
-  const inputs = form.querySelectorAll('input, select, textarea');
-  const name = inputs[0].value;
-  const email = inputs[1].value;
-  const service = inputs[2].value;
-  const message = inputs[3].value;
+  const ins  = form.querySelectorAll('input, select, textarea');
+  const name    = ins[0].value;
+  const email   = ins[1].value;
+  const phone   = ins[2].value;
+  const service = ins[3].value;
+  const message = ins[4].value;
 
   btn.disabled = true;
   btn.textContent = 'Sending...';
 
-  const sub = encodeURIComponent(`Vectorium Engineering — Project Brief from ${name}`);
-  const body = encodeURIComponent(`Name/Company: ${name}\nEmail: ${email}\nService: ${service || 'Not specified'}\n\nProject Brief:\n${message}`);
+  const sub  = encodeURIComponent(`Vectorium Engineering — Enquiry from ${name}`);
+  const body = encodeURIComponent(
+    `Name/Company: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service || 'Not specified'}\n\nProject Brief:\n${message}`
+  );
 
   setTimeout(() => {
     window.location.href = `mailto:contact@vectoriumengineering.com?subject=${sub}&body=${body}`;
     btn.disabled = false;
-    btn.textContent = 'Send Brief →';
+    btn.textContent = 'Send Enquiry →';
     ok.classList.add('show');
     form.reset();
     setTimeout(() => ok.classList.remove('show'), 6000);
   }, 700);
 }
 
-// ── NUMBER COUNTER ANIMATION ──────────────────────
-function animateCounter(el, target, suffix = '') {
-  let start = 0;
-  const duration = 1800;
-  const step = (timestamp) => {
-    if (!start) start = timestamp;
-    const progress = Math.min((timestamp - start) / duration, 1);
-    const val = Math.floor(progress * target);
-    el.textContent = val + suffix;
-    if (progress < 1) requestAnimationFrame(step);
-    else el.textContent = target + suffix;
-  };
-  requestAnimationFrame(step);
+// ── TICKER PAUSE ─────────────────────────────────
+const ticker = document.querySelector('.ticker-track');
+if (ticker) {
+  ticker.parentElement.addEventListener('mouseenter', () => ticker.style.animationPlayState = 'paused');
+  ticker.parentElement.addEventListener('mouseleave', () => ticker.style.animationPlayState = 'running');
 }
-
-// Trigger counters when stats section is visible
-const statsObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      statsObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.hs-item').forEach(el => statsObs.observe(el));
