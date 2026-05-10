@@ -99,15 +99,12 @@ In `index.html` → find `<!-- CONTACT -->` section → edit `.contact-row` item
 - **Accent Color:** Engineering blue
 - **Built:** Pure HTML/CSS/JS, no frameworks or dependencies
 
-## Mechanical Engineering Images to Upload
+## Mechanical Engineering Images Used
 
-Place these image files in the same folder as `index.html`:
-
-- `cad-modeling-work.jpg` - CAD workstation, 3D mechanical assembly, SolidWorks/SolidEdge style model
-- `technical-drawing-gdt.jpg` - close-up of engineering drawings, GD&T annotations, tolerance callouts
-- `cnc-manufacturing-part.jpg` - machined metal component, CNC/fixture/shop-floor precision part
-
-Recommended size: 1200 x 900 px or larger, JPG format, clear lighting, no heavy blur, and no random stock-photo people.
+- `cad modelling.png` - CAD modeling showcase image
+- `manufacturing.png` - manufacturing output showcase image
+- `vectorium cover image.png` - hero cover image
+- `engineering services cover image.png` - engineering services cover image
 
 ---
 

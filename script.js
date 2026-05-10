@@ -26,7 +26,7 @@ window.addEventListener('scroll', () => {
 
 // ── BACK TO TOP ──────────────────────────────────
 if (backTop) {
-  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'auto' }));
 }
 
 // ── MOBILE NAV ───────────────────────────────────
@@ -55,7 +55,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (!target) return;
     e.preventDefault();
     const top = target.getBoundingClientRect().top + window.scrollY - 80;
-    window.scrollTo({ top, behavior: 'smooth' });
+    window.scrollTo({ top, behavior: 'auto' });
   });
 });
 
